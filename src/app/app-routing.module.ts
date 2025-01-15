@@ -6,9 +6,10 @@ import {FavoritesViewComponent} from "./favorites-view/favorites-view.component"
 import { showDetailsResolver } from './tv-show-details/tv-show-details.resolver';
 
 const routes: Routes = [
-  {path: "", component: SearchViewComponent},
-  {path: "favorites", component: FavoritesViewComponent},
-  {path: "details/:id", loadComponent: () => import("src/app/tv-show-details/tv-show-details.component"), 
+  { path: "", component: SearchViewComponent},
+  { path: "favorites", component: FavoritesViewComponent},
+  { path: "details/:id",
+    loadComponent: () => import("src/app/tv-show-details/tv-show-details.component"), 
     resolve: {showDetails: showDetailsResolver}},
 
 ];
