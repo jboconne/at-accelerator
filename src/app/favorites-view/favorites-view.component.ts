@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-favorites-view',
-  standalone: true,
-  imports: [CommonModule],
+  // standalone: true,
+  // imports: [CommonModule],
   templateUrl: './favorites-view.component.html',
   styleUrls: ['./favorites-view.component.css'],
  
