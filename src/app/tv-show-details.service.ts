@@ -16,7 +16,7 @@ export class TvShowDetailsService {
   readonly allTvShowDetails$: Observable<TvShowDetails[]> = this.favorites$.pipe(
     switchMap(showIds => this.getAllTvShowDetails(showIds)),
     shareReplay(1)
-  ) 
+  )
 
   getShowDetails(showId: TvShowId): Observable<TvShowDetails> {
     return this.http.get<{tvShow: TvShowDetails}>(`${API_URL}show-details?q=${showId}`).pipe(
@@ -33,7 +33,7 @@ export class TvShowDetailsService {
         map(this.sortTvShowsByNextEpisodeDate),
       );
   }
-  
+
   private sortTvShowsByNextEpisodeDate(tvShowDetails: TvShowDetails[]): TvShowDetails[] {
     tvShowDetails.sort((show1, show2) => {
       if (show1.status === "Running" && show2.status !== "Running") {
